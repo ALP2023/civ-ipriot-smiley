@@ -1,6 +1,5 @@
 from sense_hat import SenseHat
 
-
 class Smiley:
     WHITE = (255, 255, 255)
     GREEN = (0, 255, 0)
@@ -37,3 +36,14 @@ class Smiley:
         Show the smiley on the screen.
         """
         self.sense_hat.set_pixels(self.pixels)
+
+    # a method that updates the pixels attribute by replacing all non-blank pixels with the specified color.
+    # The blank pixels remain unchanged.
+    def complexion(self, colour):
+        """
+        Set the complexion (colour) of the smiley face.
+
+        :param colour: Tuple representing the RGB colour value
+        """
+        self.pixels = [colour if pixel != self.BLANK else self.BLANK for pixel in self.pixels]
+        return colour

@@ -32,8 +32,9 @@ class Happy(Smiley, Blinkable):
         :param wide_open: True if eyes opened, False otherwise
         """
         eyes = [10, 13, 18, 21]
+        colour = self.BLANK if wide_open else self.complexion(self.YELLOW)  # call complexion method
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+            self.pixels[pixel] = colour
 
     def blink(self, delay=0.25):
         """
