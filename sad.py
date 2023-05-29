@@ -4,7 +4,7 @@ from smiley import Smiley
 
 class Sad(Smiley):
     def __init__(self):
-        super().__init__()
+        super().__init__(complexion=Smiley.BLUE)    # Access the BLUE attribute from Smiley
 
         self.draw_mouth()
         self.draw_eyes()
